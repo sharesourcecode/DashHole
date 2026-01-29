@@ -1,5 +1,7 @@
 # DashHole 🛡
 __DashHole__ é um servidor DNS Sinkhole leve e performático, escrito inteiramente em __pure POSIX Shell (Dash)__. Ele foi projetado para rodar em ambientes minimalistas como o __Termux__ (Android), utilizando automação __UPnP__ para contornar restrições de rede sem necessidade de acesso Root.
+
+
 # 🎯 Por que DashHole?
 Diferente de soluções pesadas, o DashHole foca na simplicidade e eficiência:
 - __Zero Bashismos:__ Compatível com ```/bin/sh``` (Dash), ideal para Busybox e Alpine Linux.
@@ -9,6 +11,8 @@ Diferente de soluções pesadas, o DashHole foca na simplicidade e eficiência:
 - __Cache em Memória:__ Armazena domínios bloqueados em variáveis para evitar I/O excessivo no disco.
 
 - __Automação de Rede:__ Utiliza UPnP para mapeamento dinâmico de portas no roteador.
+
+---
 # 🛠️ Requisitos
 
 No Termux, instale as dependências necessárias:
@@ -24,6 +28,8 @@ pkg install binutils busybox miniupnpc dnsutils
 - __miniupnpc:__ Para o comando ```upnpc``` (configuração do roteador).
 
 - __dnsutils:__ Ferramentas de teste como ```nslookup``` e ```dig```.
+
+
 # 🚀 Instalação e Uso
 
 1. __Clonar o repositório:__
@@ -46,6 +52,8 @@ pkg install binutils busybox miniupnpc dnsutils
     ```
 
     __Importante:__ Certifique-se de que a opção __UPnP__ está ativada nas configurações do seu roteador para que o redirecionamento automático da porta 53 funcione.
+
+
 # 📂 Estrutura do Projeto
 
 - ```dns_server.sh```: O "cérebro" do servidor. Captura requisições UDP, filtra domínios e responde com o IP local ou 0.0.0.0.
@@ -53,6 +61,8 @@ pkg install binutils busybox miniupnpc dnsutils
 - ```update_list.sh```: Script de manutenção que limpa e organiza a lista de bloqueio para busca ultra-rápida.
 
 - ```lista_bloqueio.txt```: Banco de dados de domínios (gerado após a atualização).
+
+
 # 🔍 Como Testar
 
 Após iniciar o servidor, use outro dispositivo na mesma rede:
@@ -66,3 +76,8 @@ Ou abra outra aba no Termux e execute:
 echo "teste.com" | nc -u 192.168.0.101 1053
 ```
 Se o domínio estiver na lista, o DashHole retornará ```0.0.0.0```. Caso contrário, retornará o IP do seu servidor.
+
+---
+# 📜 Licença
+
+Este projeto está sob a licença __MIT__. Sinta-se à vontade para usar, modificar e distribuir.
