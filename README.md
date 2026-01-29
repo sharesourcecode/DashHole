@@ -1,5 +1,5 @@
 # DashHole 🛡
-DashHole é um servidor DNS Sinkhole leve e performático, escrito inteiramente em pure POSIX Shell (Dash). Ele foi projetado para rodar em ambientes minimalistas como o Termux (Android), utilizando automação UPnP para contornar restrições de rede sem necessidade de acesso Root.
+__DashHole__ é um servidor DNS Sinkhole leve e performático, escrito inteiramente em __pure POSIX Shell (Dash)__. Ele foi projetado para rodar em ambientes minimalistas como o __Termux__ (Android), utilizando automação __UPnP__ para contornar restrições de rede sem necessidade de acesso Root.
 # 🎯 Por que DashHole?
 Diferente de soluções pesadas, o DashHole foca na simplicidade e eficiência:
  __● Zero Bashismos:__ Compatível com /bin/sh (Dash), ideal para Busybox e Alpine Linux.
