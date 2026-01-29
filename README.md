@@ -46,3 +46,10 @@ pkg install binutils busybox miniupnpc dnsutils
     ```
 
     __Importante:__ Certifique-se de que a opção __UPnP__ está ativada nas configurações do seu roteador para que o redirecionamento automático da porta 53 funcione.
+# 📂 Estrutura do Projeto
+
+- ```dns_server.sh```: O "cérebro" do servidor. Captura requisições UDP, filtra domínios e responde com o IP local ou 0.0.0.0.
+
+- ```update_list.sh```: Script de manutenção que limpa e organiza a lista de bloqueio para busca ultra-rápida.
+
+- ```lista_bloqueio.txt```: Banco de dados de domínios (gerado após a atualização).
