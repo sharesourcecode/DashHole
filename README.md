@@ -53,3 +53,16 @@ pkg install binutils busybox miniupnpc dnsutils
 - ```update_list.sh```: Script de manutenção que limpa e organiza a lista de bloqueio para busca ultra-rápida.
 
 - ```lista_bloqueio.txt```: Banco de dados de domínios (gerado após a atualização).
+# 🔍 Como Testar
+
+Após iniciar o servidor, use outro dispositivo na mesma rede:
+```Bash
+# Teste via nslookup (Substitua pelo IP do seu celular)
+nslookup google.com 192.168.0.101
+```
+Ou abra outra aba no Termux e execute:
+```Bash
+# Isso envia um pacote "vazio" só para despertar o script
+echo "teste.com" | nc -u 192.168.0.101 1053
+```
+Se o domínio estiver na lista, o DashHole retornará ```0.0.0.0```. Caso contrário, retornará o IP do seu servidor.
