@@ -24,3 +24,25 @@ pkg install binutils busybox miniupnpc dnsutils
 - __miniupnpc:__ Para o comando ```upnpc``` (configuração do roteador).
 
 - __dnsutils:__ Ferramentas de teste como ```nslookup``` e ```dig```.
+# 🚀 Instalação e Uso
+
+1. __Clonar o repositório:__
+    ```Bash
+    git clone https://github.com/seu-usuario/DashHole.git
+    cd DashHole
+    chmod +x *.sh
+    ```
+
+2. __Preparar a Lista de Bloqueio:__ Execute o script de atualização para baixar e formatar a lista (ex: StevenBlack/OISD):
+    ```Bash
+
+    ./update_list.sh
+    ```
+
+3. __Iniciar o Servidor:__
+    ```Bash
+
+    ./dns_server.sh
+    ```
+
+    __Importante:__ Certifique-se de que a opção __UPnP__ está ativada nas configurações do seu roteador para que o redirecionamento automático da porta 53 funcione.
